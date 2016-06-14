@@ -2,4 +2,5 @@
     <string name="app_name">Fundamentales Android</string>
     <string name="LifeCycleTestLabel">Life Cycle Test</string>
     <string name="SingleTouchTestLabel">Single Touch Test</string>
+    <string name="MultiTouchTestLabel">Multi Touch Test</string>
 </resources>
