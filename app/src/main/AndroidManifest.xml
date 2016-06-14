@@ -32,13 +32,15 @@
             android:name=".LifeCycleTest"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/LifeCycleTestLabel"/>
-
         <activity
             android:name=".SingleTouchTest"
-            android:label="@string/SingleTouchTestLabel"
             android:configChanges="keyboard|keyboardHidden|orientation"
-            />
-
+            android:label="@string/SingleTouchTestLabel"/>
+        <activity
+            android:name=".MultiTouchTest"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label= "@string/MultiTouchTestLabel">
+        </activity>
     </application>
 
 </manifest>
