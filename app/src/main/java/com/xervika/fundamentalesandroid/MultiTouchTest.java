@@ -42,7 +42,33 @@ public class MultiTouchTest extends Activity implements View.OnTouchListener {
     public boolean onTouch(View view, MotionEvent motionEvent) {
         int action = motionEvent.getAction() & MotionEvent.ACTION_MASK;
         int pointerIndex = (motionEvent.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >> MotionEvent.ACTION_POINTER_INDEX_SHIFT;
+        int pointerID = motionEvent.getPointerId(pointerIndex);
 
-        return false;
+        switch(action){
+            case MotionEvent.ACTION_DOWN: //Se
+            case MotionEvent.ACTION_POINTER_DOWN: //Cualquier dedo adiccional pulsa la pantalla mientras hay un dedo anterior pulsando
+                tocado[pointerID] = true;
+                x[pointerID] = (int) motionEvent.getX(pointerIndex);
+                y[pointerID] = (int) motionEvent.getY(pointerIndex);
+                break;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_POINTER_UP://Cualquier dedo que se levanta antes del primero que hemos pulsado.
+            case MotionEvent.ACTION_CANCEL:
+                tocado[pointerID] = false;
+                x[pointerID] = (int) motionEvent.getX(pointerIndex);
+                y[pointerID] = (int) motionEvent.getY(pointerIndex);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int pointerCount = motionEvent.getPointerCount();
+                for(int i = 0; i < pointerCount; i++){
+                    pointerIndex = i;
+                    pointerID = motionEvent.getPointerId(pointerIndex);
+                    x[pointerID] = (int) motionEvent.getX(pointerIndex);
+                    y[pointerID] = (int) motionEvent.getY(pointerIndex);
+                }
+                break;
+        }
+        updateTextView();
+        return true;
     }
 }
