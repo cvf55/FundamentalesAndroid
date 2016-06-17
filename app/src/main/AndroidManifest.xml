@@ -39,7 +39,12 @@
         <activity
             android:name=".MultiTouchTest"
             android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label= "@string/MultiTouchTestLabel">
+            android:label="@string/MultiTouchTestLabel">
+        </activity>
+        <activity
+            android:name=".KeyTest"
+            android:label="@string/title_activity_key_test"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

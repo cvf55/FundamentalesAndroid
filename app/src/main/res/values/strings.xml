@@ -3,4 +3,5 @@
     <string name="LifeCycleTestLabel">Life Cycle Test</string>
     <string name="SingleTouchTestLabel">Single Touch Test</string>
     <string name="MultiTouchTestLabel">Multi Touch Test</string>
+    <string name="title_activity_key_test">Key Test</string>
 </resources>
